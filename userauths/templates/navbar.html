@@ -16,7 +16,7 @@
        
        <div class="col">
         {% if user.is_authenticated %}
-        <ul class="navbar-nav float-right" >
+        <div class="dropdown" >
           <li class="nav-item dropdown d-flex">
             <a class="nav-link dropdown-toggle text-light" href="#" id="account" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Account
@@ -28,7 +28,7 @@
             </ul>
           </li>
           
-        </ul>
+        </div>
         {% else %}
         <ul class="navbar-nav" >
            <li><a class='dropdown-item btn btn-default' href="/accounts/login">Login</a></li>
