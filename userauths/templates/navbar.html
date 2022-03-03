@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<nav class="navbar bg-success p-4  navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand text-white" href="{% url 'index' %}">Mismora Sys</a>
+    </div>
+    <!-- Adding a serch form -->
+    <div class="d-flex navbar-right">
+       
+       <div class="col">
+        {% if user.is_authenticated %}
+        <ul class="navbar-nav float-right" >
+          <li class="nav-item dropdown d-flex">
+            <a class="nav-link dropdown-toggle text-light" href="#" id="account" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Account
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="account">
+              <li><a class="dropdown-item" href="{%url 'index'%}">Home</a></li>
+              <li><a class="dropdown-item" href="/accounts/password/change">Change Password</a></li>
+              <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+          </li>
+          
+        </ul>
+        {% else %}
+        <ul class="navbar-nav" >
+           <li><a class='dropdown-item btn btn-default' href="/accounts/login">Login</a></li>
+        </ul>
+        {% endif %}
+      </div>
+    </div>
+    
+  </div>
+</nav>
+</body>
+</html>
